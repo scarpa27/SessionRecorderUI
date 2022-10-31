@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Raleway:wght@200&display=swap?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+
+body {
+    font-size: 145%;
+    border: 1px solid rgba(255, 0, 0, 3%);
+    width: 90vw;
+    min-height: 100vh;
+    margin-left: 5vw;
+    margin-top: 5vh;
+}
+
+.welcome {
+    font-family: 'Krona One', sans-serif;
+    letter-spacing: 1.5px;
+    font-size: 16px;
+    color: #013b4f;
+    font-weight: bold;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width:4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #09277f;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.gumb {
+    border: 1px solid #2b3739;
+    border-radius: 1.5rem;
+    width: 100%;
+    padding: 2%;
+    font-weight: 600;
+    color: #2b3739;
+    cursor: pointer;
+    min-height: 50%;
+}
+
+.gumb:disabled {
+    border: 1px solid #340b0b;
+    background-color: rgba(255, 0, 0, 0.1);
+    cursor: not-allowed;
+}

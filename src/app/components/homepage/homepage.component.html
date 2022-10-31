@@ -1,0 +1,53 @@
+<header-comp></header-comp>
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="row" *ngIf="!hasStarted">
+            <button (click)="start()" class="gumb">ZAPOČNI snimanje radne sesije</button>
+        </div>
+
+        <div class="row  " *ngIf="hasStarted && !hasEnded">
+            <button (click)="end()" class="gumb">ZAUSTAVI snimanje radne sesije</button>
+        </div>
+
+        <div class="row  " *ngIf="hasStarted && hasEnded">
+            <button (click)="save()" class="gumb"
+                    [disabled]="project_id == 0 || (project_id == -1 && new_project_name.trim().length < 1)">
+                SPREMI trajanje sesije
+            </button>
+            <button (click)="discard()" class="gumb">ODBACI snimljenu sesiju</button>
+            <select [(ngModel)]="project_id">
+                <option *ngFor="let item of projects" [ngValue]="item.id">{{item.id + ". " + item.name}}</option>
+                <option [ngValue]="-1"><label>Add new project</label></option>
+            </select>
+            <input [hidden]="project_id != -1" type="text" placeholder="Name your new project"
+                   [(ngModel)]="new_project_name">
+        </div>
+
+        <div class="row text-center" *ngIf="hasStarted">
+            <h3>{{elapsed[0]}}</h3>
+            <h3>{{elapsed[1]}}</h3>
+            <h1>{{elapsed[2]}}</h1>
+        </div>
+    </div>
+</div>
+
+
+<div class="row" [hidden]="projects.length == 0">
+    <div class="col-md-10 offset-md-1">
+        <table class="table table-striped">
+            <tr>
+                <td (click)="sort('a')">Ime projekta  {{arrow('a')}}</td>
+                <td (click)="sort('b')">Početak  {{arrow('b')}}</td>
+                <td (click)="sort('c')">Kraj  {{arrow('c')}}</td>
+                <td (click)="sort('d')">Trajanje  {{arrow('d')}}</td>
+            </tr>
+            <tr *ngFor="let p of projects | frula | sorter : sort_col : sort_rev">
+                <td>{{p.a}}</td>
+                <td>{{p.b}}</td>
+                <td>{{p.c}}</td>
+                <td>{{p.d}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
