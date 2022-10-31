@@ -35,13 +35,13 @@ export class ApiService {
     }
 
     ///////////////////////////////////////////////////////////////////////////////
-    putDrzava(_id: number, _naziv: string) {
-        return this.http.put(join(this.apiRoot, "drzava", _id.toString()), {
-            id: _id,
-            drzava: _naziv});
-    }
-
-    deleteDrzava(_id: number) {
-        return this.http.delete(join(this.apiRoot, "drzava", _id.toString()));
-    }
+    // putSession(_id: number, _naziv: string) {
+    //     return this.http.put(join(this.apiRoot, "drzava", _id.toString()), {
+    //         id: _id,
+    //         drzava: _naziv});
+    // }
+    //
+    // deleteSession(_id: number) {
+    //     return this.http.delete(join(this.apiRoot, "drzava", _id.toString()));
+    // }
 }

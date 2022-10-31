@@ -32,14 +32,12 @@ export class ResponseService {
         return sub;
     }
 
-//////////////////////////////////////////////
-
-
-    putDrzavaAPI(_id: number, _naziv: string) {
-        this.apiService.putDrzava(_id, _naziv).subscribe(() => window.close());
-    }
-
-    deleteDrzavaAPI(_id: number) {
-        this.apiService.deleteDrzava(_id).subscribe();
-    }
+    //////////////////////////////////////////////
+    // putSessionAPI(_id: number, _naziv: string) {
+    //     this.apiService.putSession(_id, _naziv).subscribe(() => window.close());
+    // }
+    //
+    // deleteSessionAPI(_id: number) {
+    //     this.apiService.deleteSession(_id).subscribe();
+    // }
 }
