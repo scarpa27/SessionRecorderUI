@@ -1,3 +1,6 @@
-# SessionRecorder
+## SessionRecorderSpring
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
+### LIVE @ https://session-recorder.herokuapp.com/
+#### API LIVE @ https://session-recorder-backend.herokuapp.com
+
+##### GET .../api/project   return a list of projects and their recorded sessions
